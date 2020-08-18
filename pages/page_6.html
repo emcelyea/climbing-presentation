@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 6</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Quarantine Training :(</h1>
+	</div>
+	<div class="row">
+		<div class="col-30 col">
+			<h3 class="med-text">Original Plan</h3>
+			<ol class="med-list">
+				<li>Keep training at the gym</li>
+				<li>Go to Stone Face 1-2X a month</li>
+				<li>Have tons of fun</li>
+			</ol>
+		</div>
+		<div class="col-70 col">
+			<h3 class="med-text">Corona Plan</h3>
+			<ol class="med-list">
+				<li>Can't go to Gym or Boulder</li>
+				<li>Can't practice specific Beta or climbing technique</li>
+				<li>Just train finger & pulling strength and hopefully blow through it with 0 technique.</li>
+			</ol>
+		</div>
+	</div>
+	<h3>Impromptu Training Equipment</h3>
+	<div class="row">
+		<div class="col-50 col">
+			<p class="med-text">14mm Crimp</p>
+			<img src="images/home_crimp.JPG" style="width:100%;height:auto;"/>
+			<p class="med-text">7mm Crimp</p>
+			<img src="images/home_lil_crimp.JPG" style="width:100%;height:auto;"/>
+			<p class="med-text">Pull up Bar</p>
+			<img src="images/pullup_bar.JPG" style="width:100%;height:auto;"/>
+		</div>
+		<div class="col-50 col">
+			<p class="med-text">Finger Strength - Water Jug Training Method</p>
+			<video width="66%" height="500" controls>
+			  <source src="videos/jug_training.mov" type="video/mp4">
+			</video> 
+			<p class="med-text">Pulling Strength - Pullups</p>
+			<video width="66%" height="500" controls>
+			  <source src="videos/one_arm.mov" type="video/mp4">
+			</video> 
+		</div>
+	</div>
+	<script type="text/javascript">
+		var page = 6;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

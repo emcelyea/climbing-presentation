@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 7</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Lessons Learned</h1>
+	</div>
+	<div class="row">
+		<ol class="med-list">
+			<li>Keep training at the gym</li>
+			<li>Go to Stone Face 1-2X a month</li>
+			<li>Have tons of fun</li>
+		</ol>
+	</div>
+	<script type="text/javascript">
+		var page = 7;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

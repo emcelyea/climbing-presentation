@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 5</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Climbing Lingo</h1>
+	</div>
+	<div class="row">
+		<div class="col-50 col">
+			<h2>Holds/Moves</h2>
+			<ol class="med-list">
+				<li>Crimp</li>
+				<li>Jugs</li>
+				<li>Heel Hook</li>
+				<li>Toe Hook</li>
+				<li><i>Sidepull, Pinch, Undercling, Gaston, etc..</i></li>
+				<li>Last ones are not that important</li>
+			</ol>
+			<div class="row">
+				<div class="col-50" style="min-width: auto;">
+					<img src="images/stoneface_crimp.JPG" style="width:100%;height:auto;"/>
+				</div>
+				<div class="col-50" style="min-width: auto;">
+					<img src="images/stoneface_crux_crimp.JPG" style="width:100%;height:auto;"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-50 col">
+			<h2>Other Important terms</h2>
+			<ol class="med-list">
+				<li>Send - finish the problem</li>
+				<li>Beta - strategy to do the problem</li>
+				<li>Crux - hardest move in the problem</li>
+				<li>Flash - finish problem first try</li>
+				<li>Dyno - Dynamic</li>
+			</ol>
+			<video width="66%" height="500" controls>
+			  <source src="videos/stoneface_crux_fail.mov" type="video/mp4">
+			</video>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var page = 5;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

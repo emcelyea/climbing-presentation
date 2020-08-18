@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 2</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>What I Do</h1>
+	</div>
+	<div class="row">
+		<div class="col-50">
+			<h3>Bouldering</h3>
+			<ol class="fat-list">
+				<li>Bouldering is a superior climbing style.</li>
+				<li>You don't need hundreds of dollars of ropes and gear. </li>
+				<li>You don't need friends. </li>
+			</ol>
+			<img src="images/nature_nazi.jpg" style="height:500px;width:auto;"/>
+		</div>
+		<div class="col-50">
+			<h3>Types of Rope Climbing</h3>
+
+			<ol class="fat-list">
+				<li>Top Rope: Fixed anchor at top of climb</li>
+				<li>Sport/Lead: Bolts fixed in wall for protection </li>
+				<li>Trad: Gear carried up and placed in wall for protection </li>
+			</ol>
+			<img src="images/climbing-types.png" style="height:500px;width:auto;"/>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var page = 2;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

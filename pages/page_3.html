@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 3</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Climbing History</h1>
+	</div>
+	<div class="row">
+		<div class="col-50 col">
+			<ol class="fat-list">
+				<li>Have been climbing for about 5 years</li>
+				<li>Broke my ankle falling</li>
+				<li>Was primarily a gym climber</li>
+				<li>Am no longer a gym climber ;(</li>
+			</ol>
+		</div>
+		<div class="col-50 col">
+			<h2>Long time Nemesis: </br>The Great Stone Face</h2>
+			<img src="images/bouldering.png" style="width:100%;height:auto;"/>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var page = 3;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

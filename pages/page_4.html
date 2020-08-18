@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 4</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Pre-Corona Climbing</h1>
+	</div>
+	<div class="row">
+		<div class="col-30 col">
+			<h2>Great Stone Face Details</h2>
+			<ol class="fat-list">
+				<li>Problem in the Berkeley hills</li>
+				<li>Well known testpiece/benchmark</li>
+				<li>Instant street cred</li>
+			</ol>
+		</div>
+		<div class="col-70 col" style="align-items:center;justify-content:center;">
+			<video width="66%" height="500" controls>
+			  <source src="videos/stone_face_1.mov" type="video/mp4">
+			</video>
+			<video width="66%" height="500" controls>
+			  <source src="videos/stone_face_2.mov" type="video/mp4">
+			</video>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var page = 4;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

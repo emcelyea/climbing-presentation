@@ -1,0 +1,55 @@
+.navigation-left {
+	position: fixed;
+	top: 90%;
+	height: 10vh;
+	left: 16px;
+	line-height: 10vh;
+}
+.navigation-right {
+	position: fixed;
+	top: 90%;
+	height: 10vh;
+	right: 16px;
+	line-height: 10vh;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.col {
+	display: flex;
+	flex-direction: column;
+}
+.col-50 {
+	min-width: 300px;
+	width: 50%;
+}
+.col-30 {
+	min-width: 200px;
+	width: 30%;
+}
+.col-70 {
+	min-width: 420px;
+	width: 70%;
+}
+.fat-list li{
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+.med-list li {
+	font-size: 18px;
+	margin-bottom: 12px;
+}
+.large-text {
+	font-size: 22px;
+}
+.med-text {
+	font-size: 18px;
+}
